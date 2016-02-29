@@ -1,15 +1,21 @@
-<h1>Login</h1>
+<div class="text-center">
 
-<div class="login-form">
-  <%= form_for(:session, url: login_path) do |f| %>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <%= f.submit "Login", class: "btn" %>
-  <% end %>
-</div>
+  <h1>Login</h1>
 
-<div class="sign-up">
-  <%= link_to "Sign Up", new_user_path, class:"btn btn-success" %>
+  <div class="login-form">
+    <%= form_for(:session, url: login_path) do |f| %>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      <%= f.submit "Login", class: "btn" %>
+    <% end %>
+  </div>
+  <br>
+  <h3>or Sign Up</h3>
+
+  <div class="sign-up">
+    <%= link_to "Sign Up", new_user_path, class:"btn btn-success" %>
+  </div>
+
 </div>

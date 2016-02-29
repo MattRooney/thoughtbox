@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
                     uniqueness: true
 
   validates :password, confirmation: true
+
+  has_many :links
 end

@@ -1,0 +1,21 @@
+<div class="text-center">
+
+  <h1> <%= current_user.email %>'s Links</h1>
+  <br>
+
+  <%= form_for(Link.new) do |f| %>
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.submit "Submit New Link", class:"btn btn-primary" %>
+  <% end %>
+
+  <br>
+
+  <% @links.each do |link| %>
+    <h5>
+    <%= link_to link.title, link.url %>
+    </h5>
+  <% end %>
+</div>
