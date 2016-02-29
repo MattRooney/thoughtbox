@@ -8,7 +8,18 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  # Add more helper methods to be used by all tests here...
+  def valid_user
+    User.new({ email: "user@mail.com",
+               password: "Password 1"
+            })
+  end
+
+  def valid_link
+    Link.new({ url: "https://reverb.com/",
+               title: "test title"
+            })
+  end
+
 end
 
 class ActionDispatch::IntegrationTest
@@ -17,4 +28,5 @@ class ActionDispatch::IntegrationTest
   def teardown
     reset_session!
   end
+
 end
