@@ -14,8 +14,7 @@
   <br>
 
   <% @links.each do |link| %>
-    <h5>
-    <%= link_to link.title, link.url %>
-    </h5>
+    <h3><%= link_to link.title, link.url %></h3>
+    <%= link_to "Delete Link", link_path(link), method: :delete, class:"btn btn-danger" %>
   <% end %>
 </div>
