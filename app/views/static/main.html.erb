@@ -1,16 +1,18 @@
 <div class="container text-center" ng-controller="LinksCtrl">
   <h3> <%= current_user.email %>'s Links</h3>
   <ul class="link-list" ng-repeat="link in links track by $index">
-    <span>{{ link.title }}</span>
-    <span>{{ link.url }}</span>
-    <span>{{ link.read }}</span>
-    <button class="btn btn-primary" ng-click="done(link)">Delete</button>
+    <a style="font-size: 2em" ng-href="{{ link.url }}">{{ link.title }}</a>
+    <br>
+    <span>Read: {{ link.read }}</span>
+    <button class="btn btn-primary" ng-click="destroy(link)">Delete</button>
   </ul>
-
+  <br>
   <ul class="add-link">
     <li>Add New Link
-      <input type="text" class="txt" placeholder="New URL"
-      ng-model="newUrl" ng-keyup="add($event)" />
+      <input type="text" class="new-url" placeholder="New URL"
+      ng-model="newUrl" />
+      <input type="text" class="new-title" placeholder="New Title"
+      ng-model="newTitle" ng-keyup="add($event)" />
     </li>
   </ul>
 </div>

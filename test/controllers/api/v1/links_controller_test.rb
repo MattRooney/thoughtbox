@@ -22,10 +22,17 @@ class Api::V1::LinksControllerTest < ActionController::TestCase
 
     json_response.each do |link|
       assert link["title"]
-      assert link["body"]
-      assert link["quality"]
+      assert link["url"]
+      refute link["read"]
     end
   end
 
+  test "#create adds an additional link to to the database" do
+    assert_difference 'Link.count', 1 do
+      link = { title: "New Link", url: "https://Something.com" }
+
+      post :create, link: link, format: :json
+    end
+  end
 
 end
