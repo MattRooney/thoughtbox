@@ -1,1 +1,11 @@
-<h3>Add a New Link</h3>
+<div class="text-center">
+
+  <%= form_for(Link.new) do |f| %>
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.submit "Submit New Link", class:"btn btn-primary" %>
+  <% end %>
+
+</div>
