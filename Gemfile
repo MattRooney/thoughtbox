@@ -9,6 +9,9 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'responders', '~> 2.0'
+gem 'lodash-rails'
+gem 'angularjs-rails', '~> 1.5'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
