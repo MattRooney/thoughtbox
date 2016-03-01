@@ -2,12 +2,12 @@
   <h3> <%= current_user.email %>'s Links</h3>
   <ul class="link-list" ng-repeat="link in links track by $index">
     <a style="font-size: 2em" ng-href="{{ link.url }}">{{ link.title }}</a>
-    <p>{{ link.url }}</p>
+    <p contenteditable ng-keydown="edit(link)">{{ link.url }}</p>
     <br>
     <button class="btn btn-primary" ng-click="read(link)" ng-if= 'link.read === false' >Mark As Read</button>
     <button class="btn btn-warning" ng-click="read(link)" ng-if= 'link.read === true' >Mark As Unread</button>
     <button class="btn btn-danger" ng-click="destroy(link)">Delete</button>
-    <a class="btn btn-success" ng-href="/links/{{link.id}}">Edit</a>
+    <!-- <a class="btn btn-success" ng-href="/links/{{link.id}}">Edit</a> -->
   </ul>
   <br>
   <ul class="add-link">

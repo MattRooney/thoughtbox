@@ -25,7 +25,7 @@ app.controller('LinksCtrl', function($scope, $http) {
     }
   };
 
-  $scope.edit = function(e, link) {
+  $scope.edit = function(e  ) {
     if (e.which && e.which === 13) {
       debugger;
       $http({
