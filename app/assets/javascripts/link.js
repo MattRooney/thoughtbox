@@ -13,8 +13,16 @@ app.controller('LinksCtrl', function($scope, $http) {
     }).then(function successCallback(response) {
       $http.get(linksUrl).then(function(response) {
         $scope.links = response.data
-      }); 
+      });
     });
+  };
+
+  $scope.read = function(link) {
+    if (link.read === true) {
+      link.read = false;
+    } else {
+      link.read = true;
+    }
   };
 
   $scope.add = function(e) {
