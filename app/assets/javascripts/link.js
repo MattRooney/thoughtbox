@@ -25,6 +25,26 @@ app.controller('LinksCtrl', function($scope, $http) {
     }
   };
 
+  $scope.edit = function(e, link) {
+    if (e.which && e.which === 13) {
+      debugger;
+      $http({
+        method: 'PUT',
+        url: linksUrl+'/'+link.id,
+        data: JSON.stringify(link)
+      }).then(function successCallback(response) {
+        $http.get(linksUrl).then(function(response) {
+          $scope.links = response.data
+        });          // this callback will be called asynchronously
+          // when the response is available
+        }, function errorCallback(response) {
+          console.log(response);;
+          // called asynchronously if an error occurs
+          // or server returns response with an error status.
+        })
+    }
+  };
+
   $scope.add = function(e) {
     if (e.which && e.which === 13) {
       $http({
@@ -36,7 +56,7 @@ app.controller('LinksCtrl', function($scope, $http) {
         });          // this callback will be called asynchronously
           // when the response is available
         }, function errorCallback(response) {
-          debugger;
+          console.log(response);
           // called asynchronously if an error occurs
           // or server returns response with an error status.
         })

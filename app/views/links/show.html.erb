@@ -1,0 +1,11 @@
+<div class="text-center">
+
+  <%= form_for(@link) do |f| %>
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.submit "Edit Link", class:"btn btn-primary", method: :update %>
+  <% end %>
+
+</div>

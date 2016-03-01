@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete '/logout', to: "sessions#destroy"
 
   get '/links', to: 'static#main'
+  resources :links, only: [:show, :update]
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
