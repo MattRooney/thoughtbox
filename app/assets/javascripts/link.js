@@ -11,7 +11,9 @@ app.controller('LinksCtrl', function($scope, $http) {
       method: 'DELETE',
       url: linksUrl+'/'+link.id
     }).then(function successCallback(response) {
-      $scope.links = response.data
+      $http.get(linksUrl).then(function(response) {
+        $scope.links = response.data
+      }); 
     });
   };
 
